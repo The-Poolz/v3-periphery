@@ -28,6 +28,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@bnb-party/v3-core@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@bnb-party/v3-core/-/v3-core-1.0.4.tgz#f35ab323e6ba69ba2fdb0c38138d42e5cf260daa"
+  integrity sha512-YyIKKlxg4u+hfiFKd7AnJYUxZJf51wZMGRnBrDYoTUfMKIweFSLjJ1hbC6j2YBdylddR0HGedIOqEoYUEkDjFQ==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -1055,11 +1060,6 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.1.tgz#af8f508bf183204779938969e2e54043e147d425"
   integrity sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q==
-
-"@uniswap/v3-core@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/v3-core/-/v3-core-1.0.1.tgz#b6d2bdc6ba3c3fbd610bdc502395d86cd35264a0"
-  integrity sha512-7pVk4hEm00j9tc71Y9+ssYpO6ytkeI0y7WE9P6UcmNzhxPePwyAxImuhVsTqWK9YFvzgtvzJHi64pBl4jUzKMQ==
 
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
