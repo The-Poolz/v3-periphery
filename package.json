@@ -1,11 +1,11 @@
 {
-  "name": "@uniswap/v3-periphery",
+  "name": "@bnb-party/v3-periphery",
   "description": "🎚 Peripheral smart contracts for interacting with Uniswap V3",
   "license": "GPL-2.0-or-later",
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.4.4",
+  "version": "1.0.5",
   "homepage": "https://uniswap.org",
   "keywords": [
     "uniswap",
@@ -17,13 +17,7 @@
     "url": "https://github.com/Uniswap/uniswap-v3-periphery"
   },
   "files": [
-    "contracts/base",
-    "contracts/interfaces",
-    "contracts/libraries",
-    "artifacts/contracts/**/*.json",
-    "!artifacts/contracts/**/*.dbg.json",
-    "!artifacts/contracts/test/**/*",
-    "!artifacts/contracts/base/**/*"
+    "contracts"
   ],
   "engines": {
     "node": ">=10"
@@ -32,7 +26,7 @@
     "@openzeppelin/contracts": "3.4.2-solc-0.7",
     "@uniswap/lib": "^4.0.1-alpha",
     "@uniswap/v2-core": "^1.0.1",
-    "@uniswap/v3-core": "^1.0.0",
+    "@bnb-party/v3-core": "^1.0.4",
     "base64-sol": "1.0.1"
   },
   "devDependencies": {

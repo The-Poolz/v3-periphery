@@ -1,12 +1,16 @@
 import {
   abi as FACTORY_ABI,
   bytecode as FACTORY_BYTECODE,
-} from '@uniswap/v3-core/artifacts/contracts/UniswapV3Factory.sol/UniswapV3Factory.json'
+} from '@bnb-party/v3-core/artifacts/contracts/UniswapV3Factory.sol/UniswapV3Factory.json'
 import { abi as FACTORY_V2_ABI, bytecode as FACTORY_V2_BYTECODE } from '@uniswap/v2-core/build/UniswapV2Factory.json'
 import { Fixture } from 'ethereum-waffle'
 import { ethers, waffle } from 'hardhat'
+import {
+  abi as MockBNBPartyABI,
+  bytecode as MockBNBPartyBytecode,
+} from '../../artifacts/contracts/test/MockBNBParty.sol/MockBNBParty.json'
 import { IUniswapV3Factory, IWETH9, MockTimeSwapRouter } from '../../typechain'
-
+import { MockBNBParty } from '../../typechain/MockBNBParty'
 import WETH9 from '../contracts/WETH9.json'
 import { Contract } from '@ethersproject/contracts'
 import { constants } from 'ethers'
@@ -34,10 +38,19 @@ export const v2FactoryFixture: Fixture<{ factory: Contract }> = async ([wallet])
 }
 
 const v3CoreFactoryFixture: Fixture<IUniswapV3Factory> = async ([wallet]) => {
-  return (await waffle.deployContract(wallet, {
-    bytecode: FACTORY_BYTECODE,
-    abi: FACTORY_ABI,
-  })) as IUniswapV3Factory
+  const mockBNBParty = (await waffle.deployContract(wallet, {
+    bytecode: MockBNBPartyBytecode,
+    abi: MockBNBPartyABI,
+  })) as MockBNBParty
+
+  return (await waffle.deployContract(
+    wallet,
+    {
+      bytecode: FACTORY_BYTECODE,
+      abi: FACTORY_ABI,
+    },
+    [mockBNBParty.address]
+  )) as IUniswapV3Factory
 }
 
 export const v3RouterFixture: Fixture<{
