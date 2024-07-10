@@ -7,12 +7,4 @@ contract MockBNBParty is IBNBParty {
     function handleSwap(address recipient) external override {
         // do nothing
     }
-
-    fallback() external payable {
-        // Handle unrecognized function calls
-    }
-
-    receive() external payable {
-        // Handle incoming BNB
-    }
 }
